@@ -9,8 +9,8 @@ using ssh: git clone git@github.com:ThimLohse/kattis-automated-submit-wrapper.gi
 Login to your instance of kattis. (i.e. kth.kattis.com or open.kattis.com), and download your personal configuration file.
 The file will usually be opened automatically in a new tab or window (p.s. you have to be logged in first).
 ```
-Example:
-1. Go to "kth.kattis.com/help/submit",
+Example for instance of "kth.kattis.com":
+1. Go to [kth.kattis.com/help/submit](https://kth.kattis.com/help/submit),
 2. Click the "Download your personal configuration file",
 3. Copy the files content into the repository file named ".kattisrc_dummy" and rename the file ".kattisrc"
 ```
