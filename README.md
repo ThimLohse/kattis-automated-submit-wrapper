@@ -24,8 +24,7 @@ Example for instance of "kth.kattis.com":
 2. Click the "Download your personal configuration file",
 3. Copy the files content into the repository file named ".kattisrc_dummy" and rename the file ".kattisrc"
 ```
-If the folder "project_files" exists, then copy the project files your wan't to upload into the folder.
-Else create a new folder specifically named "/project_files" and copy the files you want to upload into it.
+Create a new folder in the root directory specifically named "project_files" and copy the files you want to upload into it.
 NOTE: all files in the "project_files"-folder will be included in your submission, so make sure that all required files are there and that reduntant files are not there.
 Open up a terminal in the root directory and run "python3 auto_submit.py" and you will be asked the following questions.
 ```
