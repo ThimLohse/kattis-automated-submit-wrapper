@@ -52,8 +52,8 @@ def parameters():
             break;
     while True:
         try:
-            # cast to int
-            # if no value is entered catch the exception and use defualt values
+            # cast to string
+            # value must be entered continue until any string, make sure it's a valid problem id.
             problemID = str(input('Enter unique problem id:\n'))
             if problemID == '' :
                 print('Unique problem id must be specified');
@@ -61,13 +61,13 @@ def parameters():
             print("problem id: ", problemID, "\n");
             break;
         except Exception:
-            # got something that could not be cast to a int. Interpret as user wanting default value.
+            # Catch any exception
             print('An error occured');
             break;
     while True:
         try:
-            # cast to int
-            # if no value is entered catch the exception and use defualt values
+            # cast to string
+            # user must choose main file
             mainId = str(input('Enter name of main file:\n'))
             if mainId == '':
                 print('Main file must be specified');
@@ -75,7 +75,7 @@ def parameters():
             print('main file is: ', mainId, "\n");
             break;
         except Exception:
-            # got something that could not be cast to a int. Interpret as user wanting default value.
+            # Catch any exception
             print('An error occured');
             break;
 
