@@ -5,7 +5,7 @@ The following packages/modules are required to run this program.
 ```
 requests==2.20.0
 ```  
-To install required packages and make sure that you get the right releases use:
+To install required packages and make sure that you get the right releases the following command in the root folder of the project:
 ```
 pip install -r requirements.txt
 ```
