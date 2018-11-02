@@ -3,7 +3,8 @@ This is a very simple wrapper class to the kattis submit client. It might be mos
 ### How to use:
 Clone this repository to your local machine.
 ```
-git clone [this repository url]
+using https: git clone https://github.com/ThimLohse/kattis-automated-submit-wrapper.git
+using ssh: git clone git@github.com:ThimLohse/kattis-automated-submit-wrapper.git
 ```
 Login to your instance of kattis. (i.e. kth.kattis.com or open.kattis.com), and download your personal configuration file.
 The file will usually be opened automatically in a new tab or window (p.s. you have to be logged in first).
