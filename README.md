@@ -1,5 +1,14 @@
 # Kattis Automatic Submit Client
-This is a very simple wrapper class to the kattis submit client. It might be most helpful when dealing with problems that deal with randomness or approximation, as results might differ because of the pseudorandomness of most programming languages random generators.  
+This is a very simple wrapper class to the kattis submit client. It might be most helpful when dealing with problems that deal with randomness or approximation, as results might differ because of the pseudorandomness of most programming languages random generators.
+## Python packages required to run:
+The following packages/modules are required to run this program.
+```
+requests==2.18.4
+```  
+To install required packages and make sure that you get the right releases use:
+```
+pip install -r requirements.txt
+```
 ### How to use:
 Clone this repository to your local machine.
 ```
