@@ -16,13 +16,18 @@ Example:
 Copy the project files your wan't to upload into the folder "/project_files".
 Open up a terminal in the root directory and run "python3 auto_submit.py" and you will be asked the following questions.
 ```
-1. Enter number of iterations for submission (An integer, Default: 10): (this is the number of submissions you want to submit with a fixed interval).
+1. Enter number of iterations for submission (An integer, Default: 10):
+(this is the number of submissions you want to submit with a fixed interval).
 
-2. Enter time interval before new submission (in minutes, Default: 5): (This is the time between each submission. Make sure that the time between each submission is at least the maximum time for finishing all instances of a problem (#subproblems x maximum allowed time.))
+2. Enter time interval before new submission (in minutes, Default: 5):
+(This is the time between each submission.
+Make sure that the time between each submission is at least the maximum time for finishing all instances of a problem (#subproblems x maximum allowed time.))
 
 3. Enter problem id: (Enter the unique problem id which is shown on kattis for each problem)
 
-4. Enter names of all files included seperated with one white space: (Enter names of all files you wish to upload, file type included) (there is no need to add the path to the folder as it is already hardcoded.))
+4. Enter names of all files included seperated with one white space:
+(Enter names of all files you wish to upload, file type included,
+there is no need to add the path to the folder as it is already hardcoded.)
 
 5. Enter name of main file: (Enter the name of you main file)
 
