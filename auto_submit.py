@@ -7,6 +7,7 @@ problemID = ''
 mainId = ''
 files = ''
 restart = False;
+iteration_num = 0;
 
 
 def parameters():
@@ -21,6 +22,9 @@ def parameters():
             # if no value is entered catch the exception and use defualt values
             iterations = int(
                 input('Enter number of iterations for submission (An integer, Default: 10):\n'))
+            if iterations <= 0 or iterations > 500:
+                print('Must submit at least once and cannot submit more than 500 times');
+                continue;
             print("# iterations: ", iterations, "\n");
             break;
         except ValueError:
@@ -31,6 +35,10 @@ def parameters():
             break;
     while True:
         try:
+            if iterations == 1:
+                print('timer value irrelevant for one submission\n');
+                break;
+
             # cast to int
             # if no value is entered catch the exception and use defualt values
             timer = int(input('Enter time interval before new submission (in minutes, Default: 5):\n'));
@@ -60,20 +68,6 @@ def parameters():
         try:
             # cast to int
             # if no value is entered catch the exception and use defualt values
-            files = str(input('Enter names of all files included seperated with one white space:\n'))
-            if files == '':
-                print('No input files where specified');
-                continue;
-            print("files to submit: ", files, "\n");
-            break;
-        except Exception:
-            # got something that could not be cast to a int. Interpret as user wanting default value.
-            print('An error occured');
-            break;
-    while True:
-        try:
-            # cast to int
-            # if no value is entered catch the exception and use defualt values
             mainId = str(input('Enter name of main file:\n'))
             if mainId == '':
                 print('Main file must be specified');
@@ -85,41 +79,58 @@ def parameters():
             print('An error occured');
             break;
 
+def prepare_project_files():
+    global files;
+    print('Files that will be included in submission are:');
+    split_files = os.listdir('./project_files');
+    proj_files = "./project_files/{0}".format(split_files[0]);
+    print(split_files[0]);
+    for i in range (1, len(split_files)):
+        temp = " ./project_files/{0}".format(split_files[i]);
+        proj_files += temp;
+        print(split_files[i]);
+    files = proj_files;
+
 
 def submit():
-    global iterations
+    global iterations;
+    global iteration_num;
     if iterations == 0:
-        print('Finished submitting...program closing')
-        sys.exit(0)
+        print('Finished submitting...program closing');
+        sys.exit(0);
     else:
         try:
-            print('Iterations left: ', iterations);
             iterations -= 1;
-            threading.Timer((timer * 60), submit).start();
-            submit_req = "python ./submit.py ./project_files/{0} -p {1} -m {2}".format(
+            iteration_num += 1;
+            print('Running iteration: ', iteration_num);
+            submit_req = "python ./submit.py {0} -p {1} -m {2}".format(
                 files, problemID, mainId);
             os.system(submit_req);
-        except:
-            print('An error occured during submission number: ', iterations);
-            print('Restarting will tried once');
-            submit();
+            if iterations == 0:
+                print('Finished submitting...program closing');
+                sys.exit(0);
+            threading.Timer((timer * 60), submit).start();
+        except Exception:
+            raise Exception('An error occured during submission number: ', iteration_num);
 
 def main():
     parameters();
-    while True:
+    run = True;
+    while run:
         try:
             start = str(input('Do you want to start automation? (Y/N), Default is yes.')).lower();
             if start == 'y' or start == '':
+                prepare_project_files();
                 submit();
-                break;
+                run = False;
             elif start == 'n':
                 print('Program exited');
+                run = False;
                 sys.exit(0);
-                break;
-        except Exception:
-            print('An error occured');
-            break;
-
+        except Exception as e:
+            print(e);
+            run = False;
+            sys.exit(0);
 
 if __name__ == '__main__':
     main()
