@@ -3,7 +3,7 @@ This is a very simple wrapper class to the kattis submit client. It might be mos
 ## Python packages required to run:
 The following packages/modules are required to run this program.
 ```
-requests==2.18.4
+requests==2.20.0
 ```  
 To install required packages and make sure that you get the right releases use:
 ```
