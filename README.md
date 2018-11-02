@@ -26,6 +26,7 @@ Example for instance of "kth.kattis.com":
 ```
 If the folder "project_files" exists, then copy the project files your wan't to upload into the folder.
 Else create a new folder specifically named "/project_files" and copy the files you want to upload into it.
+NOTE: all files in the "project_files"-folder will be included in your submission, so make sure that all required files are there and that reduntant files are not there.
 Open up a terminal in the root directory and run "python3 auto_submit.py" and you will be asked the following questions.
 ```
 1. Enter number of iterations for submission (An integer, Default: 10):
@@ -34,16 +35,13 @@ Open up a terminal in the root directory and run "python3 auto_submit.py" and yo
 2. Enter time interval before new submission (in minutes, Default: 5):
 (This is the time between each submission.
 Make sure that the time between each submission is at least the maximum time for finishing all instances of a problem (#subproblems x maximum allowed time.))
+For single submissions this input is omitted.
 
 3. Enter problem id: (Enter the unique problem id which is shown on kattis for each problem)
 
-4. Enter names of all files included seperated with one white space:
-(Enter names of all files you wish to upload, file type included,
-there is no need to add the path to the folder as it is already hardcoded.)
+4. Enter name of main file: (Enter the name of you main file)
 
-5. Enter name of main file: (Enter the name of you main file)
-
-6. Do you want to start automation? (Y/N)
+5. Do you want to start automation? (Y/N)
 ```
 NOTE: In the terminal you will only see that a project has been submitted, its ID and which iteration the program is currently in. To confirm that the client has started succesfully, go kattis and check that a new submission has been added.
 The program will end after all iterations (# submissions have been sent).
