@@ -34,5 +34,6 @@ there is no need to add the path to the folder as it is already hardcoded.)
 6. Do you want to start automation? (Y/N)
 ```
 NOTE: In the terminal you will only see that a project has been submitted, its ID and which iteration the program is currently in. To confirm that the client has started succesfully, go kattis and check that a new submission has been added.
+The program will end after all iterations (# submissions have been sent).
 
 ## HAPPY HACKING!
